@@ -1,0 +1,17 @@
+.form-group {
+  width: 80%;
+  margin: 10px auto;
+}
+.flex{
+    display: flex;
+}
+.space-between{
+    justify-content: space-between;
+}
+mat-form-field {
+  width: 100%;
+}
+.state-city {
+  display: flex;
+  gap: 20px;
+}
