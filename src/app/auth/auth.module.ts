@@ -5,7 +5,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { AuthRoutingModule } from './auth.routing';
 import { MaterialModule } from '../material/material.module';
 import { AuthComponent } from './components/auth/auth.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CookieModule } from 'ngx-cookie';
 
 
 
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AuthRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CookieModule
   ]
 })
 export class AuthModule { }

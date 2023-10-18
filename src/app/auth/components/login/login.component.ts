@@ -16,7 +16,10 @@ export class LoginComponent {
   })
   doLogin(){
     const {username, password} = this.loginForm.value;
-    if(username == password){
+    let users = localStorage.getItem('users');
+    let usersObj = users ? JSON.parse(users): {};
+    let user = Object.keys(usersObj).find(u=>u==username);
+    if(user && usersObj[username] == password){
       this.router.navigate(['/forms'])
     }
     else
