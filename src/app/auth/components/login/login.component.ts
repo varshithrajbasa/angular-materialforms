@@ -8,21 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(private fb: FormBuilder, private router: Router){}
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   loginForm: FormGroup = this.fb.group({
-    username:["", [Validators.required,Validators.minLength(6)]],
-    password:["", [Validators.required,Validators.minLength(6)]]
+    username: ["", [Validators.required, Validators.minLength(6)]],
+    password: ["", [Validators.required, Validators.minLength(6)]]
   })
-  doLogin(){
-    const {username, password} = this.loginForm.value;
+  doLogin() {
+    const { username, password } = this.loginForm.value;
     let users = localStorage.getItem('users');
-    let usersObj = users ? JSON.parse(users): {};
-    let user = Object.keys(usersObj).find(u=>u==username);
-    if(user && usersObj[username] == password){
+    let usersObj = users ? JSON.parse(users) : {};
+    let user = Object.keys(usersObj).find(user => user === username);
+    if (user && usersObj[username] === password) {
       this.router.navigate(['/forms'])
     }
     else
-    alert("Wrong password");
+      alert("Wrong password");
   }
 }

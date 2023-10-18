@@ -14,8 +14,8 @@
             placeholder="Ex. pat@example.com"
           />
         </mat-form-field>
-        <mat-error *ngIf="username?.hasError('nameIsTaken')">Username is already Taken.</mat-error>
-        <mat-error *ngIf="username?.hasError('email')">It must be email address.</mat-error>
+        <mat-error *ngIf="signUpForm.get('username')?.hasError('nameIsTaken')">Username is already Taken.</mat-error>
+        <mat-error *ngIf="signUpForm.get('username')?.hasError('email')">It must be email address.</mat-error>
         <mat-form-field>
           <mat-label>Password</mat-label>
           <input
